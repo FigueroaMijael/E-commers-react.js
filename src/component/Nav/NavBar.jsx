@@ -1,4 +1,3 @@
-import CartWidgetContent from "../CartWidget/CartWidgetContent"
 
 const NavBar = ({link,link1,link2,link3,link4, logo}) => {
     return (
@@ -11,7 +10,6 @@ const NavBar = ({link,link1,link2,link3,link4, logo}) => {
                 <li className="pointer">{link3}</li>
                 <li className="pointer">{link4}</li>
             </ul>
-            <CartWidgetContent />
         </div>
     )
 }
