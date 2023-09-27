@@ -12,7 +12,7 @@ const NavBarr = () => {
 
 <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-      <NavbarBrand href="#Home">PROGRAMMING</NavbarBrand>
+      <NavbarBrand href="/">PROGRAMMING</NavbarBrand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
