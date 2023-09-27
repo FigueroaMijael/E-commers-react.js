@@ -1,1 +1,1 @@
-Video PreView del archivo ("GIF") Uploading Preview-Ecommers.mp4…
+Video PreView del archivo ("GIF") Preview-Ecommers.zip
