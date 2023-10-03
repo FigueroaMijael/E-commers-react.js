@@ -5,9 +5,8 @@ import { Container, Row } from 'react-bootstrap'
 
 const CatePagesContainer = ({catepage}) => {
 
-  const [cateitems] = useFetch(`https://fakestoreapi.com/products/category/${catepage}`)
+  const  [cateitems] = useFetch(`https://fakestoreapi.com/products/category/${catepage}`)
 
-console.log(cateitems)
   return (
     <Container>
       <Row>

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 
 const useFetch = (url) => {
     const [datas, setDatas] = useState(null)
+    const {catepage} = useParams()
 
     const getData = async () => {
         try {
@@ -16,7 +18,7 @@ const useFetch = (url) => {
 
     useEffect(() => {
         getData()
-    }, [])
+    }, [catepage])
 
   return [datas]
 }
