@@ -15,11 +15,11 @@ function App() {
     <NavBarr />
 
      <Routes>
-      <Route path='/' element={<Home />}/>
-      <Route path='/categorias/' element={<Categorias />}/>
-      <Route path='/categorias/:catepage' element={<CatePage />} />
-      <Route path='/detalle/:id' element={<Detalle />}/>
-      <Route path='/contactos' element={< Contactos />}/>
+      <Route exact path='/' element={<Home />}/>
+      <Route exact path='/categorias/' element={<Categorias />}/>
+      <Route exact path='/categorias/:catepage' element={<CatePage />} />
+      <Route exact path='/detalle/:id' element={<Detalle />}/>
+      <Route exact path='/contactos' element={< Contactos />}/>
     </Routes> 
 
     
