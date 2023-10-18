@@ -1,22 +1,33 @@
-import React from 'react'
-import useFetch from '../../hooks/useFetch'
 import CatePagesList from './CatePagesList'
 import { Container, Row } from 'react-bootstrap'
+import { query, where } from 'firebase/firestore'
+import { getData, getDocuments } from '../../Services/FirebaseServices'
+import { useEffect, useState } from 'react'
 
-const CatePagesContainer = ({catepage}) => {
+const CatePagesContainer = ({category}) => {
 
-  const  [cateitems] = useFetch(`https://fakestoreapi.com/products/category/${catepage}`)
+  const [datas, setDatas] = useState([])
+
+  useEffect(() => {
+    const ItemCollection = getDocuments('products')
+    const q = query(ItemCollection, where("category", "==", category))
+    getData(q).then(res => setDatas(res))
+    
+  }, [])
+
+
 
   return (
+
     <Container>
       <Row>
         {
-          cateitems !== null &&
-          <CatePagesList cateitems = {cateitems} />
+          datas.length > 0 &&
+          <CatePagesList datas = {datas}></CatePagesList>
         }
       </Row>
-    </Container>
-  )
+    </Container> 
+  ) 
 }
 
 export default CatePagesContainer

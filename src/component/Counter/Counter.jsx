@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import CartContext from '../../Context/CartContext/CartContext'
 
-const Counter = () => {
+const Counter = ({stock ,onAdd}) => {
     const [count, setCount] = useState(1)
 
     const agregar = () => {
-        setCount( count + 1)
+        if(count < stock) {
+            setCount( count + 1)
+        }
     }
 
     const quitar = () => {
@@ -14,9 +17,10 @@ const Counter = () => {
     }
   return (
     <div>
-        <span onClick={quitar} className='pointer'> - </span>
-        <p>{count}</p>
-        <span onClick={agregar} className='pointer'> + </span>
+        <button onClick={agregar}> + </button>
+        <span>{ count }</span>
+        <button onClick={quitar}> - </button>
+        <button onClick={() => onAdd(count) }>Agregar al carrito</button>
     </div>
   )
 }

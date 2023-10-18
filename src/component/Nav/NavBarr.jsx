@@ -19,11 +19,14 @@ const NavBarr = () => {
           <Nav.Link href="#link"><NavLink className={({isActive}) => isActive ? "link-active" : "links"} to="/">Home</NavLink></Nav.Link>
             <Nav.Link href="#link"><NavLink className={({isActive}) => isActive ? "link-active" : "links"} to="/categorias"> Categorias</NavLink></Nav.Link>
             <NavDropdown id="basic-nav-dropdown">
-              <Nav.Link><NavLink className={( { isActive} ) => isActive ? "link-active" : "links"} to="/categorias/jewelery">joyas</NavLink></Nav.Link>
-              <Nav.Link><NavLink className={( { isActive} ) => isActive ? "link-active" : "links"} to="/categorias/women's clothing">mujer</NavLink></Nav.Link>
-              <Nav.Link><NavLink className={( { isActive} ) => isActive ? "link-active" : "links"} to="/categorias/men's clothing">hombre</NavLink></Nav.Link>
-              <Nav.Link><NavLink className={( { isActive} ) => isActive ? "link-active" : "links"} to="/categorias/electronics">electro</NavLink></Nav.Link>
+              <Nav.Link><NavLink className={( { isActive} ) => isActive ? "link-active" : "links"} to="/categorias/notebook">Notebooks</NavLink></Nav.Link>
+              <Nav.Link><NavLink className={( { isActive} ) => isActive ? "link-active" : "links"} to="/categorias/computers">Computers</NavLink></Nav.Link>
+              <Nav.Link><NavLink className={( { isActive} ) => isActive ? "link-active" : "links"} to="/categorias/accesorys">Acessorys</NavLink></Nav.Link>
+              <Nav.Link><NavLink className={( { isActive} ) => isActive ? "link-active" : "links"} to="/categorias/peripherals">Perifherals</NavLink></Nav.Link>
+              <Nav.Link><NavLink className={( { isActive} ) => isActive ? "link-active" : "links"} to="/categorias/tablet">Tablets</NavLink></Nav.Link>
+              <Nav.Link><NavLink className={( { isActive} ) => isActive ? "link-active" : "links"} to="/categorias/consoles">Consoles</NavLink></Nav.Link>
             </NavDropdown>
+            <Nav.Link><NavLink className={({isActive}) => isActive ? "link-active" : "links"} to="/profile">Profile</NavLink></Nav.Link>
             <Nav.Link><NavLink className={({isActive}) => isActive ? "link-active" : "links"} to="/contactos">Contacto</NavLink></Nav.Link>
           </Nav>
           <CartWidget />

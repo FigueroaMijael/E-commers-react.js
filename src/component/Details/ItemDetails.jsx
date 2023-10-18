@@ -1,23 +1,26 @@
 import React from 'react'
 import Counter from '../Counter/Counter'
-import { Button } from 'react-bootstrap'
+import style from './style.module.css'
 
-const ItemDetails = ({item}) => {
+const ItemDetails = ({data, onAdd}) => {
   return (
-    <div>
-        <h5>{item.title}</h5>
-        <img src={item.image} alt="" className='img'/>
+    <div className={style.contianer}>
+        <h5 className={style.name}>{data.name}</h5>
+        <img src={data.img} alt="" className={style.image}/>
         <p>
-            Descripcion: {item.description}
+            Descripcion: {data.description}
         </p>
         <p>
-            Precio: {item.price}
+            Precio: {data.price}
         </p>
         <p>
-            Categoria: {item.category}
+          stock: {data.stock}
         </p>
-        <Counter />
-        <Button>agregar</Button>
+        <p>
+            Categoria: {data.category}
+        </p>
+        <Counter stock = {data.stock} onAdd = {onAdd} />
+
     </div>
   )
 }

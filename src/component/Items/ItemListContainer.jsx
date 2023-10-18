@@ -1,16 +1,30 @@
-import React from 'react'
 import { Container } from 'react-bootstrap'
 import {Row} from 'react-bootstrap'
-import useFetch from '../../hooks/useFetch'
 import ItemList from './ItemList'
+import { useEffect, useState } from 'react';
+import { getData, getDocuments } from '../../Services/FirebaseServices';
+import { query } from 'firebase/firestore';
+
+
 
 const ItemListContainer = () => {
-    const [items] = useFetch('https://fakestoreapi.com/products')
+
+  const  [items, setItems] = useState([]);
+  const [price, setPrice] = useState(null)
+
+  useEffect(() => {
+    const collectionItem = getDocuments('products')
+
+    const q = query(collectionItem)
+
+    getData(q).then(data => setItems(data))
+  } ,[price])
+
   return (
     <Container>
         <Row>
             {
-                items !== null &&
+                items.length > 0 &&
                 <ItemList items={items} />
             }
         </Row>

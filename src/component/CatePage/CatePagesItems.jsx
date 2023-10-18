@@ -3,16 +3,16 @@ import { Button } from 'react-bootstrap'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-const CatePagesItems = ({cateitem}) => {
+const CatePagesItems = ({dat}) => {
   return (
     <Card style={{ width: '18rem' }}className='mx-2 mt-4'>
-    <Card.Img  src={cateitem.image} variant="top"  style={{ height: '30%' }} />
+    <Card.Img  src={dat.img} variant="top"  style={{ height: '30%' }} />
     <Card.Body>
-        <Card.Title>{cateitem.title}</Card.Title>
+        <Card.Title>{dat.name}</Card.Title>
         <Card.Text>
-            {cateitem.description}
+            {dat.description}
         </Card.Text>
-        <Link to={`/detalle/${cateitem.id}`}>
+        <Link to={`/detalle/${dat.id}`}>
         <Button variant='primary'>Ver detalles</Button>
         </Link>
     </Card.Body>

@@ -1,14 +1,24 @@
-import React from 'react'
-import useFetch from '../../hooks/useFetch'
+import { query } from 'firebase/firestore'
+import { getData, getDocuments } from '../../Services/FirebaseServices'
 import CategoryList from './CategoryList'
 
+import { useEffect, useState } from 'react'
+
 const CategoryListContainer = () => {
-    const [data] = useFetch(`https://fakestoreapi.com/products`)
+    
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    const ItemCollection = getDocuments('products')
+    const q = query(ItemCollection)
+    getData(q).then(res => setData(res))
+    
+  }, [])
     
   return (
     <div>
         {
-            data !== null &&
+            data.length > 0 &&
             <CategoryList data={data}/>
         }
     </div>
