@@ -5,6 +5,7 @@ import './index.css'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap-icons/font/bootstrap-icons.css"
 import { BrowserRouter } from 'react-router-dom'
+import { getAuth } from "firebase/auth";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -22,7 +23,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+ export const app = initializeApp(firebaseConfig);
+ export const auth = getAuth(app)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

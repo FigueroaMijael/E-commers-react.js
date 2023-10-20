@@ -3,6 +3,7 @@ import CartContext from '../../Context/CartContext/CartContext'
 import { Link, useNavigate } from 'react-router-dom'
 import { addDoc, collection, getFirestore } from "firebase/firestore"
 import styles from "./style.module.css"
+import Checkout from '../../pages/Checkout'
 
 const CartDetails = () => {
 

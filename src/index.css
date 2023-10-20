@@ -14,3 +14,33 @@
     width: 30%;
     height: 30%;
 }
+
+.error {
+    color: red;
+}
+
+.errors {
+    color: red;
+}
+
+.BodySection {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.formTitle {
+    display: block;
+}
+
+.formInput {
+    width: 100%;
+}
+
+.formError {
+    display: block;
+    color: tomato;
+    font-size: x-small;
+}

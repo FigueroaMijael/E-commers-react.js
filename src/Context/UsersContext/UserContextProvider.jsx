@@ -1,24 +1,22 @@
 import React, { useState } from 'react'
 import UserContext from './UserContext'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import {auth} from '../../main'
 
 const UserContextProvider = ({ children }) => {
-    const[user, setUser] = useState({
-        name: "Fernando",
-        age: 25
-    })
 
-    const editUser = (newName, newAge) => {
-        setUser({
-            name: newName,
-            age: newAge
-        })
-    } 
+  const signUp = (email, password) => {
+    createUserWithEmailAndPassword(auth, email, password)
+  }
 
-    const value = {
-        user,
-        editUser
-    }
-
+  const login = (email, password) => {
+    signInWithEmailAndPassword(auth, email, password)
+  }
+  
+const value = {
+     signUp,
+     login
+}
 
   return (
     <UserContext.Provider value={value}>

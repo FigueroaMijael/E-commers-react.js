@@ -5,6 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { NavbarBrand } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import CartWidget from './CartWidget/CartWidget'
+import UserLoginLogo from '../Login/UserLoginLogo';
 
 
 const NavBarr = () => {
@@ -30,6 +31,7 @@ const NavBarr = () => {
             <Nav.Link><NavLink className={({isActive}) => isActive ? "link-active" : "links"} to="/contactos">Contacto</NavLink></Nav.Link>
           </Nav>
           <CartWidget />
+          <UserLoginLogo />
         </Navbar.Collapse>
       </Container>
     </Navbar>
