@@ -10,7 +10,7 @@ import { query } from 'firebase/firestore';
 const ItemListContainer = () => {
 
   const  [items, setItems] = useState([]);
-  const [price, setPrice] = useState(null)
+
 
   useEffect(() => {
     const collectionItem = getDocuments('products')
@@ -18,7 +18,7 @@ const ItemListContainer = () => {
     const q = query(collectionItem)
 
     getData(q).then(data => setItems(data))
-  } ,[price])
+  } ,[])
 
   return (
     <Container>

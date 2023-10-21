@@ -30,7 +30,7 @@ const NavBarr = () => {
             <Nav.Link><NavLink className={({isActive}) => isActive ? "link-active" : "links"} to="/profile">Profile</NavLink></Nav.Link>
             <Nav.Link><NavLink className={({isActive}) => isActive ? "link-active" : "links"} to="/contactos">Contacto</NavLink></Nav.Link>
           </Nav>
-          <CartWidget />
+          <CartWidget /> 
           <UserLoginLogo />
         </Navbar.Collapse>
       </Container>

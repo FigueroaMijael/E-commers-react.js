@@ -8,12 +8,13 @@ import { getDocument } from '../../Services/FirebaseServices'
 const ItemDetailsContainer = ({id}) => {
 
   const [data, setData] = useState(null)
+
+  const {addItem} = useContext(CartContext)
     
     const onAdd = (q) => {
       addItem(data, q)
     }
 
-    const {addItem} = useContext(CartContext)
     
     useEffect( () => {
       getDocument('products', id).then(res => setData(res))

@@ -3,6 +3,7 @@ import Counter from '../Counter/Counter'
 import style from './style.module.css'
 
 const ItemDetails = ({data, onAdd}) => {
+
   return (
     <div className={style.contianer}>
         <h5 className={style.name}>{data.name}</h5>
@@ -19,7 +20,7 @@ const ItemDetails = ({data, onAdd}) => {
         <p>
             Categoria: {data.category}
         </p>
-        <Counter stock = {data.stock} onAdd = {onAdd} />
+        <Counter quantity = {data.quantity} stock = {data.stock} onAdd = {onAdd} />
 
     </div>
   )

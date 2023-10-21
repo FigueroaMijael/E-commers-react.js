@@ -1,26 +1,30 @@
 import React, { useContext, useState } from 'react'
 import CartContext from '../../Context/CartContext/CartContext'
 
-const Counter = ({stock ,onAdd}) => {
-    const [count, setCount] = useState(1)
+const Counter = ({stock ,onAdd,  quantity = 1}) => {
+    const [count, setCount] = useState(quantity)
+
 
     const agregar = () => {
-        if(count < stock) {
-            setCount( count + 1)
+        if(count >= stock ) {
+            console.log('es mas que el stock')
+        }else {
+            setCount( count + 1 )
         }
     }
 
     const quitar = () => {
-        if(count > 1){
+        if(count <= stock){
             setCount(count - 1)
         }
     }
+
   return (
     <div>
-        <button onClick={agregar}> + </button>
-        <span>{ count }</span>
-        <button onClick={quitar}> - </button>
-        <button onClick={() => onAdd(count) }>Agregar al carrito</button>
+        <span className='buttonCounter' onClick={quitar}>-</span>
+        <p>{count}</p>
+        <span className='buttonCounter' onClick={agregar}>+</span>
+        <button onClick={() => onAdd(count)}> agregar al carrito</button>
     </div>
   )
 }
