@@ -7,15 +7,15 @@ const CatePagesList = ({datas}) => {
  
 
   return (
-    <div>
+    <>
     {
         datas.map((dat) => (
-            <Col key={dat.id}>
+            <Col md={4} lg={4} sm={12} key={dat.id}>
             <CatePagesItems dat={dat} />
             </Col>
         ))
     }
-    </div>
+    </>
   )
 }
 

@@ -3,6 +3,7 @@ import { getData, getDocuments } from '../../Services/FirebaseServices'
 import CategoryList from './CategoryList'
 
 import { useEffect, useState } from 'react'
+import { Container, Row } from 'react-bootstrap'
 
 const CategoryListContainer = () => {
     
@@ -16,12 +17,14 @@ const CategoryListContainer = () => {
   }, [])
     
   return (
-    <div>
-        {
+    <Container>
+      <Row>
+       {
             data.length > 0 &&
             <CategoryList data={data}/>
         }
-    </div>
+      </Row>
+    </Container>
   )
 }
 

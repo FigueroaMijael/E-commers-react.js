@@ -9,15 +9,19 @@ const CategoryList = ({data}) => {
     const cateCuatro = data.find(prod => prod.id === "ITiosqSKhZkkn3Lo6PWc")
     const cateCinco = data.find(prod => prod.id === "TFmId1zg4UJqedrZVAKd" )
     const cateSeis = data.find(prod => prod.id === "auqtS0eNdQZtqkAYtSuI")
+
+    const arrayCategory = [cateUno, cateDos, cateTres, cateCuatro, cateCinco, cateSeis]
    
   return (
-    <div>
+    <>
         {
+          arrayCategory.map((items) => (
             <Col md={4} lg={4} sm={12}>
-                <ItemCategory datA={data} cateUno={cateUno} cateDos={cateDos} cateTres={cateTres} cateCuatro={cateCuatro} cateCinco={cateCinco} cateSeis={cateSeis} />
+                <ItemCategory items = {items} />
             </Col>
+          ))
         }
-    </div>
+    </>
   )
 }
 
