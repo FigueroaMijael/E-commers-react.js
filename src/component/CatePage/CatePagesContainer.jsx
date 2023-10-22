@@ -13,7 +13,7 @@ const CatePagesContainer = ({category}) => {
     const q = query(ItemCollection, where("category", "==", category))
     getData(q).then(res => setDatas(res))
     
-  }, [])
+  }, [category])
 
 
 

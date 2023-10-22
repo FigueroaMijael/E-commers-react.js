@@ -5,15 +5,15 @@ import style from'./style.module.css'
 
 const ItemList = ({items}) => {
   return (
-    <div>
+    <>
         {
-            items.map((item) => (
+          items.map((item) => (
                 <Col md={4} lg={4} sm={12} key={item.id}>
                   <CardItem item={item} />
                 </Col>
             ))
         }
-    </div>
+    </>
   )
 }
 
