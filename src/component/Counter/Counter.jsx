@@ -1,30 +1,48 @@
-import React, { useContext, useState } from 'react'
-import CartContext from '../../Context/CartContext/CartContext'
-
-const Counter = ({stock ,onAdd,  quantity = 1}) => {
-    const [count, setCount] = useState(quantity)
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 
-    const agregar = () => {
-        if(count >= stock ) {
-            console.log('es mas que el stock')
-        }else {
-            setCount( count + 1 )
+const Counter = ({stock ,onAdd}) => {
+    const [count, setCount] = useState(1)
+    const [itemStock, setItemStock] = useState(stock);
+    const [vendido, setVendido] = useState(false);
+
+
+
+    const incrementarStock = () => {
+        if(count < itemStock ) {
+            setCount(count + 1)
         }
     }
 
-    const quitar = () => {
-        if(count <= stock){
+    const decrementarStock = () => {
+        if(count > 1 ){
             setCount(count - 1)
         }
     }
 
+    const addToCart = (quantity) => {
+        if (count <= itemStock) {
+            setCount(1);
+            setItemStock(itemStock - quantity);
+            setVendido(true);
+            onAdd(quantity);
+        }
+    }
+
+    useEffect(() => {
+        setItemStock(stock)
+    }, [stock])
+
   return (
     <div>
-        <span className='buttonCounter' onClick={quitar}>-</span>
+        <span className='buttonCounter' onClick={decrementarStock}>-</span>
         <p>{count}</p>
-        <span className='buttonCounter' onClick={agregar}>+</span>
-        <button onClick={() => onAdd(count)}> agregar al carrito</button>
+        <span className='buttonCounter' onClick={incrementarStock}>+</span>
+        <div>
+        <button type="button" className="btn btn-outline-warning" onClick={() => { addToCart(count) }}>Agregar al Carrito</button>
+        {vendido ? <Link to={"/cart"} className="btn btn-outline-warning">Terminar Mi Compra</Link> : " "}
+        </div>
     </div>
   )
 }

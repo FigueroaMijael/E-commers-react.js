@@ -20,7 +20,6 @@ const ItemDetailsContainer = ({id}) => {
       getDocument('products', id).then(res => setData(res))
   }, [])
 
-console.log(data)
   return (
     <div>
         {

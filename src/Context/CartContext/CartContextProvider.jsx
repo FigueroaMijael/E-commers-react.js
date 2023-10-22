@@ -4,20 +4,21 @@ import CartContext from './CartContext'
 const CartContextProvider = ({children}) => {
     const [cart, setCart] = useState([])
 
-    console.log("CONTEXT", cart)
+    
+    const isInCart = (id) => {
+        return cart.some(cartItem => cartItem.id === id)
+    }
 
-    const addItem = (data, q) => {
-        const {id} = data
-        
+    const addItem = (item, quantity) => {
+        const {id} = item
 
         if( isInCart(id) ){
             const newCart = cart.map(el => {
-                
                 if(el.id === id){
                     if(el.quantity < el.stock){
                         return {
                             ...el,
-                            quantity: el.quantity + q
+                            quantity: el.quantity + quantity
                         };
                     }
                 }
@@ -29,31 +30,37 @@ const CartContextProvider = ({children}) => {
             setCart([
                 ...cart,
                 {
-                    ...data, quantity: q
+                    ...item, quantity: quantity
                 }
             ])
         }
     };
 
-    const isInCart = (id) => {
-        return cart.some(cartItem => cartItem.id === id)
-    }
 
-
-    const removeItem = (id, q) => {
+    const removeItem = (id, quantity) => {
         const newCart = cart.filter((el) => el.id !== id);
         setCart(newCart)
     };
 
+    const cartTotal = () => {
+        return cart.reduce((total, item) => total += item.quantity, 0)
+    }
+    const sumTotal = () => {
+        return cart.reduce((total, item) => total += item.quantity * item.price, 0);
+    }
+
     const clear = () => {
         setCart([])
     }
+
 
     const values = {
         cart,
         addItem,
         removeItem,
         clear,
+        cartTotal,
+        sumTotal
     }
 
   return (

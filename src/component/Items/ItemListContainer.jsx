@@ -7,6 +7,7 @@ import { query } from 'firebase/firestore';
 
 
 
+
 const ItemListContainer = () => {
 
   const  [items, setItems] = useState([]);
@@ -22,7 +23,7 @@ const ItemListContainer = () => {
 
   return (
     <Container>
-        <Row>
+        <Row >
             {
                 items.length > 0 &&
                 <ItemList items={items} />

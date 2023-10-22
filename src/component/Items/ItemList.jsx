@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col } from 'react-bootstrap'
 import CardItem from './CardItem'
+import style from'./style.module.css'
 
 const ItemList = ({items}) => {
   return (
@@ -8,7 +9,7 @@ const ItemList = ({items}) => {
         {
             items.map((item) => (
                 <Col md={4} lg={4} sm={12} key={item.id}>
-                <CardItem item={item} />
+                  <CardItem item={item} />
                 </Col>
             ))
         }

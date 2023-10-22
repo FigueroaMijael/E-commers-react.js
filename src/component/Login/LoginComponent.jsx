@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
-import { addDoc, collection, getFirestore } from "firebase/firestore"
 import useAuth from '../../Hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
 
@@ -27,7 +26,6 @@ const onSubmit = handleSubmit(async (data, e) => {
             }
 })
 
-console.log(error)
   return (
    <section className='BodySection'>
 

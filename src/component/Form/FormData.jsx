@@ -30,7 +30,7 @@ const FormData = ({formdata, inputchange, onsubmit, errors}) => {
         <div>
           <h3>Entrega</h3>
 
-          <label for="slcPaises">Pais/region</label> 
+          <label>Pais/region</label> 
           <select 
           name='slcPaises'
           id='slcPaises'
@@ -152,7 +152,7 @@ const FormData = ({formdata, inputchange, onsubmit, errors}) => {
           />
           {errors.city && <span className='errors'>{errors.city}</span>}
 
-          <label for="slcProvinciaEstado">Provincia / Estado</label> 
+          <label>Provincia / Estado</label> 
           <select 
           id="slcProvinciaEstado"
           name='slcProvinciaEstado'

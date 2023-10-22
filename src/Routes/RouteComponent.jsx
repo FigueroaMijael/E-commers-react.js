@@ -10,6 +10,7 @@ import UserProfile from '../pages/UserProfile'
 import Checkout from '../pages/Checkout'
 import Login from '../pages/Login'
 import Registro from '../pages/Registro'
+import ThackYou from '../component/TackYou/ThackYou'
 
 
 const RouteComponent = () => {
@@ -26,6 +27,7 @@ const RouteComponent = () => {
       <Route exact path='/checkout/:orderId' element={<Checkout />} />
       <Route exact path='/login' element={<Login />} />
       <Route exact path='/registro' element={<Registro />} />
+      <Route exact path='/thankyou/:id' element={<ThackYou />} />
     </Routes>
   )
 }
