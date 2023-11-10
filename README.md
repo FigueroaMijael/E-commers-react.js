@@ -20,6 +20,6 @@ Puedes traer y mostrar esos productos en tu pagina principal, podes navegar entr
  Para poder visualizar la pagina debes realizar los siguientes pasos.
 
  1. realizar un git clone
- 2. git npm install (para instalar las dependencias)
+ 2. npm install (para instalar las dependencias)
  3. npm run dev
 
