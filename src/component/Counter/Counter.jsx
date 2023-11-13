@@ -22,12 +22,13 @@ const Counter = ({stock ,onAdd}) => {
     }
 
     const addToCart = (quantity) => {
-        if (count <= itemStock) {
+        if (count < itemStock) {
             setCount(1);
             setItemStock(itemStock - quantity);
             setVendido(true);
             onAdd(quantity);
-        }
+        } 
+
     }
 
     useEffect(() => {
@@ -36,11 +37,14 @@ const Counter = ({stock ,onAdd}) => {
 
   return (
     <div>
+        <div className='countContainer'>
         <span className='buttonCounter' onClick={decrementarStock}>-</span>
         <p>{count}</p>
         <span className='buttonCounter' onClick={incrementarStock}>+</span>
+        </div>
         <div>
         <button type="button" className="btn btn-outline-warning" onClick={() => { addToCart(count) }}>Agregar al Carrito</button>
+        <br />
         {vendido ? <Link to={"/cart"} className="btn btn-outline-warning">Terminar Mi Compra</Link> : " "}
         </div>
     </div>
