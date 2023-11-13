@@ -20,19 +20,27 @@
 }
 
 .errors {
+    display: block;
     color: red;
 }
 
 .BodySection {
     display: flex;
     min-height: 100vh;
+    width: 60%;
     justify-content: center;
     align-items: center;
+}
+
+.formBody{
+    width: 100%;
+    min-height: 100vh;
 }
 
 
 .formTitle {
     display: block;
+    font-weight: bold;
 }
 
 .formInput {

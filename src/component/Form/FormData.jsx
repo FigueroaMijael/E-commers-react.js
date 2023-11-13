@@ -3,13 +3,13 @@ import React from 'react'
 const FormData = ({formdata, inputchange, onsubmit, errors}) => {
 
   return (
-<section>
-    <form onSubmit={onsubmit}>
+<section className='BodySection'>
+    <form  className='formBody' onSubmit={onsubmit}>
         <div>
-          <p>Contacto<small>tienes una cuenta? <a href="">iniciar session</a></small></p>
-        <label>email</label>
+          <p className='formTitle' >Contacto <small>tienes una cuenta? <a href=''>iniciar session</a></small></p>
+        <label className='formTitle'>email</label>
         <input 
-        className={errors.email ? "error" : ""} 
+        className={errors.email ? 'error' : 'formInput'} 
         type="text" 
         name="email" 
         id="email" 
@@ -21,168 +21,152 @@ const FormData = ({formdata, inputchange, onsubmit, errors}) => {
         <p>
           <input 
           type="checkbox" 
-          name="" 
-          id=""/>
+          name='formInput' 
+          id=''/>
           <small>Enviarme novedades y ofertas por correo electrónico</small>
           </p>
         </div>
         
         <div>
-          <h3>Entrega</h3>
+          <h3 className='formTitle'>Entrega</h3>
 
-          <label>Pais/region</label> 
+          <label className='formTitle'>Pais/region</label> 
           <select 
           name='slcPaises'
           id='slcPaises'
-          className={errors.slcPaises ? "error" : ""}
+          className={errors.slcPaises ? "error" : 'formInput'}
           onChange={inputchange}
           value={formdata.slcPaises}
           >
-            <option value="">Selecciona tu pais de origen</option>
+            <option value='formInput'>Selecciona tu pais de origen</option>
             <option value="ar">Argentina</option>
             <option value="uy">Uruguay</option>
             <option value="br">Brasil</option>
           </select>
           {errors.slcPaises && <span className='errors'>{errors.slcPaises}</span>}
-
-          <br />
           
-          <label>Nombre</label>
+          <label className='formTitle'>Nombre</label>
           <input 
           type="text" 
           name="name" 
           id="name" 
           placeholder='Nombre'
-          className={errors.name ? "error" : ""} 
+          className={errors.name ? "error" : 'formInput'} 
           onChange={inputchange} 
           value={formdata.name} 
           />
           {errors.name && <span className='errors'>{errors.name}</span>}
 
-          <label>Apellido</label>
+          <label className='formTitle'>Apellido</label>
           <input 
           type="text" 
           name="surname" 
           id="surname" 
           placeholder='Apellido'
-          className={errors.surname ? "error" : ""} 
+          className={errors.surname ? "error" : 'formInput'} 
           onChange={inputchange} 
           value={formdata.surname} 
           />
           {errors.surname && <span className='errors'>{errors.surname}</span>}
 
-          <br />
-
-          <label>DNI</label>
+          <label className='formTitle'>DNI</label>
           <input 
           type="text" 
           name="dni" 
           id="dni" 
           placeholder='DNI'
-          className={errors.dni ? "error" : ""} 
+          className={errors.dni ? "error" : 'formInput'} 
           onChange={inputchange} 
           value={formdata.dni} 
           />
           {errors.dni && <span className='errors'>{errors.dni}</span>}
 
-          <br />
-
-          <label>Direccion</label>
+          <label className='formTitle'>Direccion</label>
           <input 
           type="text" 
           name="direccionEnvio" 
           id="direccionEnvio" 
           placeholder='Direccion del envio'
-          className={errors.direccionEnvio ? "error" : ""} 
+          className={errors.direccionEnvio ? "error" : 'formInput'} 
           onChange={inputchange} 
           value={formdata.direccionEnvio} 
           />
           {errors.direccionEnvio && <span className='errors'>{errors.direccionEnvio}</span>}
 
-          <br />
-
-          <label>Seleccione fecha de entrega</label>
+          <label className='formTitle'>Seleccione fecha de entrega</label>
           <input
           type='date'
           name='dayOfDelivery'
           id='dayOfDelivery'
-          className={errors.dayOfDelivery ? "error" : ""} 
+          className={errors.dayOfDelivery ? "error" : 'formInput'} 
           onChange={inputchange} 
           value={formdata.dayOfDelivery}
           />
           {errors.dayOfDelivery && <span className='errors'>{errors.dayOfDelivery}</span>}
-
-          <br />
           
-          <label>Casa, Departamento, etc (opcional)</label>
+          <label className='formTitle'>Casa, Departamento, etc (opcional)</label>
           <input 
           type="text" 
           name="typeOfDomicile" 
           id="typeOfDomicile" 
           placeholder='Casa, Departamento, etc (opcional)'
-          className={errors.typeOfDomicile ? "error" : ""} 
+          className={errors.typeOfDomicile ? "error" : 'formInput'} 
           onChange={inputchange} 
           value={formdata.typeOfDomicile}  
           />
           {errors.typeOfDomicile && <span className='errors'>{errors.typeOfDomicile}</span>}
 
-          <br />
-
-          <label>Codigo posta</label>
+          <label className='formTitle'>Codigo posta</label>
           <input 
           type="text" 
           name="cp" 
           id="cp" 
           placeholder='Codigo posta'
-          className={errors.cp ? "error" : ""} 
+          className={errors.cp ? "error" : 'formInput'} 
           onChange={inputchange} 
           value={formdata.cp}  
           />
           {errors.cp && <span className='errors'>{errors.cp}</span>}
 
-          <label>Ciudad</label>
+          <label className='formTitle'>Ciudad</label>
           <input 
           type="text" 
           name="city" 
           id="city" 
           placeholder='Ciudad'
-          className={errors.city ? "error" : ""}  
+          className={errors.city ? "error" : 'formInput'}  
           onChange={inputchange} 
           value={formdata.city} 
           />
           {errors.city && <span className='errors'>{errors.city}</span>}
 
-          <label>Provincia / Estado</label> 
+          <label className='formTitle'>Provincia / Estado</label> 
           <select 
           id="slcProvinciaEstado"
           name='slcProvinciaEstado'
-          className={errors.slcProvinciaEstado ? "error" : ""} 
+          className={errors.slcProvinciaEstado ? "error" : 'formInput'} 
           onChange={inputchange} 
           value={formdata.slcProvinciaEstado} 
           >
-            <option value="">Selecciona tu Provincia/Estado</option>
+            <option value='formInput'>Selecciona tu Provincia/Estado</option>
             <option value="BsAs">Buenos Aires(Provincia)</option>
             <option value="MZA">Mendoza</option>
             <option value="CBA">Cordoba</option>
           </select>
           {errors.slcProvinciaEstado && <span className='errors'>{errors.slcProvinciaEstado}</span>}
 
-          <br />
-
-          <label>Num. telefono</label>
+          <label className='formTitle'>Num. telefono</label>
           <input
           id="telNo"
           name="telNo"
           placeholder='Num. telefono' 
-          className={errors.telNo ? "error" : ""} 
+          className={errors.telNo ? "error" : 'formInput'} 
           onChange={inputchange} 
           value={formdata.telNo} 
           />
           {errors.telNo && <span className='errors'>{errors.telNo}</span>}
 
-          <br />
-
-          <input type="reset" name="restablecer" id="" value="Borrar todo"/>
+          <input type="reset" name="restablecer" id='' value="Borrar todo"/>
         </div>
     </form>
 </section>
